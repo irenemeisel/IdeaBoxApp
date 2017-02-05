@@ -1,0 +1,120 @@
+discuss:
+method = post
+value = put
+
+
+# gem       'shotgun'
+# require   './idea'
+
+
+http://tutorials.jumpstartlab.com/projects/idea_box.html
+
+
+# get '/' do
+  #
+	# 	"hello world"
+	# 	# "אמור שלום"
+  #
+	#
+
+	Sinatra::Base
+
+
+
+	# run! if app_file == $0
+
+	what is run!???
+
+
+does the order of def s in a class matter?
+
+
+
+	  def self.all
+
+	  and not self.save?
+
+
+	  We have a database method, but it’s only available to the instances of Idea, not the Idea class itself.
+
+
+
+	  Notice that the old instance method database now just calls Idea.database. The result is that, in either an instance method or class method, we can now call database to get our database
+
+
+
+	  def self.all
+        raw_ideas = database.transaction do |db|
+          db['ideas'] || []
+        end
+        raw_ideas.map do |data|
+           Idea.new(data[:title], data[:description])
+
+how does data get defined?
+and you're not using puts or telling it to print out
+
+
+
+
+IT SEEMS LIKE EACH_WITH_INDEX ISN'T THAT COMMON
+WHAT IF YOU WANTED TO DO THIS WITH
+a.each Call the given block once for each element in array OR
+a.each_index Call the given block once for each element in a passing the index as param
+?
+
+
+ideas.each_with_index do |idea, id|
+#why no puts
+#what does this code do???
+
+
+with_index used more???
+
+each_with_index
+
+ arr.each_with_index {|value, index| puts "#{index} item is #{value}";}
+
+ 002 > arr.each_with_index {|value, index| puts "#{index} item is #{value}";}
+0 item is paul
+1 item is john
+2 item is george
+3 item is ringo
+ => ["paul", "john", "george", "ringo"]
+
+
+  <% ideas.each_with_index do |idea, id| %>
+       <li>
+         <%= idea.title %> (<%= id %>)<br/> #why parentheses?
+         <%= idea.description %>
+
+WHERE IS UNIQUE IDENTIFIER IN YAML?
+
+defining delete route
+
+say in english what's happening here:
+delete '/:id' do |id|
+  "DELETING an idea!"
+end
+
+
+
+‘Browsers’ do support PUT and DELETE, but it's HTML that doesn't.
+
+the final W3C HTML 5.0 spec both say that the only HTTP methods that their form elements should
+allow are GET and POST
+
+
+Instead we’ll use a common pattern to work around the limitation.
+Our form will send a POST request, but in the form data we’ll embed a marker indicating that we want to delete
+a record.
+
+
+look @ edit erb
+value attribute uses the current values for the idea rather than having blank boxes.
+(is this true for description too?)
+
+
+  erb :index, locals: {ideas: []}
+means render the ERB template named index and define in that scope the local variable named ideas with the value [].
+
+lots of locals
