@@ -18,6 +18,8 @@ class IdeaBoxApp < Sinatra::Base
 	get '/' do
 		# "hello world"
 		erb :index, locals: {ideas: Idea.all}
+    # This means render the ERB template named index and define in
+    # that scope the local variable named ideas with the value [].
   end
 
 
@@ -43,7 +45,7 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/hello/' do
     greeting = params[:greeting] || "Hi There"
-    erb :index, locals:  {greeting: greeting}
+    erb :index, locals => {'greeting' => greeting}
   end
 
 
