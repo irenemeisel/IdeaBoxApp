@@ -1,6 +1,14 @@
 <html>
 <head>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"    rel="stylesheet">
+  <link href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"  rel="stylesheet">
+
   <title>IdeaBox</title>
+
+
 </head>
 <body>
 <h1>IdeaBox</h1>
@@ -14,8 +22,8 @@
 <ul>
   <% ideas.each_with_index do |idea, id| %>
       <li>
-        <%= idea.title %> (<%= id %>)<br/>
-        <%= idea.description %>
+        <p class="bg-primary"><%= idea.title %> (<%= id %>)<br/></p>
+      <p class="bg-success"> <%= idea.description %><p/>
         <a href="/<%= id %>/edit">Edit</a>
         <form action="/<%= id %>" method="POST">
           <input type="hidden" name="_method" value="DELETE">
