@@ -6,5 +6,7 @@ gem 'sinatra', require: 'sinatra/base'
 
 gem 'rack'
 
+gem 'rake'
+
 gem 'shotgun'
 # gem "rails"
