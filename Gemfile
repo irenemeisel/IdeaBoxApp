@@ -6,7 +6,7 @@ gem 'sinatra', require: 'sinatra/base'
 
 gem 'rack'
 
-gem 'rake'
-
 gem 'shotgun'
 # gem "rails"
+
+#what branch am in on???
