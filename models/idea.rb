@@ -11,6 +11,7 @@ class Idea
 
 
   def self.database
+    # @database ||= YAML::Store.new "../ideabox" | created outside / for some reason so changing directory structure
     @database ||= YAML::Store.new "ideabox"
   end
 
